@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>车位状态查询页面</title>
+    <link rel="stylesheet" href="__STATIC__/bootstrap/css/bootstrap.min.css">
+    <script src="__STATIC__/js/jquery-3.3.1.min.js"></script>
+    <script src="__STATIC__/bootstrap/js/bootstrap.min.js"></script>
+ 
+   
+    <script src="__STATIC__/layui/dist/layui.js"></script>
+    <link rel="stylesheet" href="__STATIC__/layui/dist/css/layui.css">
+</head>
+<body>
+    <script>
+        //这个方法用于显示修改的数据
+        function edit(id){
+            if(id!=''){
+                //如果是修改，从数据库获取数据
+                $.post('GetMember',{id:id},function(rs){
+                    $('#id').val(rs.id);
+                    $('#status').val(rs.status);
+                    $('#platenumber').val(rs.platenumber);
+                });
+            }
+        }
+</script>
+ <form  class="form-inline mb-3" method="get">
+    <input class="form-control" placeholder="请输入车牌号" name="keyword"> 
+    &nbsp &nbsp &nbsp<button type="button" class="layui-btn">搜索</button>
+</form>
+    <table class="layui-table">
+        <colgroup>
+          <col width="150">
+          <col width="150">
+          <col width="150">
+          <col width="150">
+          <col width="150">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>区域</th>
+            <th>车位编号</th>
+            <th>车位状态</th>
+            <th>所停车辆</th>
+            <th>操作</th>
+          </tr> 
+        </thead>
+        <tbody>
+            {volist name='list' id='status'}
+                <tr>
+                    <td>{$status.region}</td>
+                    <td>{$status.parkingid}</td>
+                    <td>{$status.status}</td>
+                    <td>{$status.platenumber}</td>
+                    <td>
+                      <a data-toggle="modal" data-target="#myModal" onclick="edit('{$status.id}')">
+                      <i class="layui-icon layui-icon-add-1" style="font-size:25px;margin:8px"title="停放车辆"></i>
+                      </a>
+                    </td>
+                </tr>
+            {/volist}
+        </tbody>
+      </table>
+<!-- 模态框 -->
+<!-- 如果你不需要模态框弹出时的动画效果（淡入淡出效果），删掉 .fade 类即可 -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <!-- 模态框主体 -->
+      <div class="modal-body">
+        <div class="form-group">
+            <label id="label">车位状态</label>
+            <input name="region" id='region' class='form-control'>
+        </div>
+        <div class="form-group">
+              <label id="label">停放车辆</label>
+              <input name="platenumber" id='platenumber' class='form-control' placeholder="请输入车牌号">
+        </div>
+        <button type="button" class='btn btn-primary' id='btnSave'>提交</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="test1"></div>
+<script>
+    layui.use('laypage', function(){
+      var laypage = layui.laypage;
+      
+      //执行一个laypage实例
+      laypage.render({
+        elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+        ,count: 50 //数据总数，从服务端得到
+        ,limit:5
+      });
+    });
+ </script>
+</body>
+</html>

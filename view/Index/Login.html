@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幼儿园管理系统后台模板登录页面</title>
+    <link rel="stylesheet" href="__STATIC__/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/bootstrap/css/font-awesome.min.css">
+    <style>
+        body{
+            background-color: black;
+        }
+        .box{
+            border:1px solid gray;
+            width: 400px;
+            height: 300px;
+            margin-left:500px;
+            margin-top: 150px;
+            background-color: aqua;
+        }
+        .box p{
+            font: bold 20px/35px '微软雅黑';
+            text-align: center;
+            color:black
+        }
+        .input-group{
+           margin-left:100px;
+        }
+        .btn-info{
+            margin-left: 100px;
+            font: bold 15px/20px '微软雅黑';
+        }
+        .btn-warning{
+            margin-left:35px;
+            font: bold 15px/20px '微软雅黑';
+        }
+        .register{
+            margin-left: 100px;
+            font: bold 15px/30px '微软雅黑';
+        }
+        .register a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> 
+          <p>幼儿园管理系统登录页面</p>
+          <form>
+                <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text"" class="form-control" id="username" name="username" placeholder="用户名"
+                        style="width:150px">
+                </div>
+            
+            </br>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="密码"
+                    style="width:150px">
+                </div>
+            </br>
+                <button  class="btn btn-info" type="btn" style="width:75px">登录</button>
+                <button  class="btn btn-warning" type="btn" style="width:75px">重置</button>
+            </br>
+        </br>
+                 <button class="register" style="width:150px"><a href="register.html">立即注册</a></button>
+          </form>
+    </div>
+</body>
+</html>

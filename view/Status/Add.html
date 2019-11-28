@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>停车页面</title>
+    <script src="__STATIC__/layui/dist/layui.js"></script>
+    <link rel="stylesheet" href="__STATIC__/layui/dist/css/layui.css">
+</head>
+<body>
+    <form class="layui-form" action="AddSave" method="POST">
+        <div class="layui-form-item">
+          <label class="layui-form-label">序号框</label>
+          <div class="layui-input-block">
+            <input type="text" name="id" required  lay-verify="required" placeholder="请输入序号" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">车位编号框</label>
+          <div class="layui-input-block">
+            <input type="text" name="parkingid"" required lay-verify="required" placeholder="请输入车位编号" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">车牌号框</label>
+            <div class="layui-input-block">
+              <input type="text" name="platenumber" placeholder="请输入车牌号" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">车位区域框</label>
+          <div class="layui-input-block">
+            <input type="text" name="region" required lay-verify="required" placeholder="请输入车位区域" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">车位状态框</label>
+            <div class="layui-input-block">
+              <input type="text" name="status" required lay-verify="required" placeholder="请输入车位状态" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即添加</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+      </form>
+       
+      <script>
+      layui.use('form', function(){
+        var form = layui.form;
+      });
+      </script>
+</body>
+</html>

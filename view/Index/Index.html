@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>车辆管理系统首页</title>
+  <script src="__STATIC__/layui/dist/layui.js"></script>
+  <link rel="stylesheet" href="__STATIC__/layui/dist/css/layui.css">
+  <style>
+    body{padding:0; margin:0; width:100%; height:100%;}
+    #left{width:250px;height: 100%;position:absolute;left:0;top:0;}
+    .title{width: 250px;height: 100%;}
+    #right{width: 1268px;height:100%;z-index:9999;position: absolute;left:250px;color:black;
+      box-sizing:border-box; }
+    #react{width: 1286px;height:45px; background-color:whitesmoke;}
+  </style>
+</head>
+<body>
+    <base target="main_page">
+              <div id="left">
+                  <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test" style="width:250px;background-color: black;">
+                        <li class="layui-nav-item">
+                          <a href="javascript:;">
+                            <i class="layui-icon layui-icon-home">
+                                &nbsp<cite>首页</cite>
+                            </i>
+                          </a>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;">
+                              <i class="layui-icon layui-icon-log">
+                                  &nbsp<cite>车位管理</cite>
+                              </i>
+                          </a>
+                          <dl class="layui-nav-child">
+                            <dd><a href="/CarShop/status/add">添加车位</a></dd>
+                            <dd><a href="/CarShop/move/index">取车</a></dd>
+                            <dd><a href="/CarShop/status/index">车位状态查询</a></dd>
+                          </dl>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;">
+                            <i class="layui-icon layui-icon-form">
+                                &nbsp<cite>财务管理</cite>
+                            </i>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">停车费用</a></dd>
+                        </dl>
+                      </li>
+                      <li class="layui-nav-item"><a href="javascript:;">
+                          <i class="layui-icon layui-icon-user">
+                              &nbsp<cite>角色管理</cite>
+                          </i>
+                      </a>
+                      <dl class="layui-nav-child">
+                          <dd><a href="/CarShop/actor/add">添加管理员</a></dd>
+                          <dd><a href="/CarShop/actor/index">管理员信息查询</a></dd>
+                      </dl>
+                      </li>
+                      <li class="layui-nav-item"><a href="login.html">
+                            <i class="layui-icon layui-icon-loading">
+                                &nbsp<cite>退出登录</cite>
+                            </i>
+                        </a>
+                      </li>
+                      </ul>
+               </div>
+          <div id="right">
+            <div id="react">
+              <div class="layui-container">  
+                <div class="layui-row">
+                  <div class="layui-col-md4">
+                      <a href="javascript:;" id="btn">
+                      <i class="layui-icon layui-icon-shrink-right"style="font-size:20px;margin:30px;"> 
+                      </i>
+                      </a>
+                      <a href="javascript:;">
+                      <i class="layui-icon layui-icon-website"style="font-size:20px;margin:30px;"> 
+                      </i>
+                      </a>
+                      <a href="javascript:;">
+                      <i class="layui-icon layui-icon-refresh-3"style="font-size:20px;margin:30px;"> 
+                      </i>
+                      </a>
+                  </div>
+                  <div class="layui-col-md4">
+                    欢迎登录用户17301121
+                  </div>
+                  <div class="layui-col-md4">
+                      <a href="javascript:;">
+                          <i class="layui-icon layui-icon-notice"style="font-size:20px;margin:30px;" title="通知">
+                          </i>
+                      </a>
+                      <a href="javascript:;">
+                          <i class="layui-icon layui-icon-login-weibo"style="font-size:20px;margin:30px;" title="微博">
+                          </i>
+                      </a>
+                      <a href="javascript:;">
+                          <i class="layui-icon layui-icon-login-wechat"style="font-size:20px;margin:30px;" title="微信">
+                          </i>
+                      </a>
+                      <a href="javascript:;">
+                          <i class="layui-icon layui-icon-login-qq"style="font-size:20px;margin:30px;" title="QQ">
+                          </i>
+                      </a> 
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div id="right_main">
+              <iframe name='main_page' src="" frameborder="0" 
+                style="width:1284px;height:681px;">
+              </iframe>
+          </div>
+   <script>
+      //注意：导航 依赖 element 模块，否则无法进行功能性操作
+      layui.use('element', function(){
+        var element = layui.element;
+      });
+      </script>
+</body>
+</html>
